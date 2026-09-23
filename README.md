@@ -2,7 +2,7 @@
 
 Windows 98 风格的希腊语数字听写练习器，提供中文界面。基于 `greek_number_listening_v7_win98.html` 整理，使用浏览器语音合成与本地学习档案，无需后端或构建工具。
 
-**GitHub Pages 地址（启用部署后）：<https://ypnomania.github.io/Greek-Numbers/>**
+**在线使用：<https://ypnomania.github.io/Greek-Numbers/>**
 
 ## 功能
 
@@ -50,7 +50,7 @@ python3 -m http.server 8000
 
 在仓库 **Settings → Pages → Build and deployment** 中，选择 **Deploy from a branch**，然后选择 `main` 和 `/(root)`。后续将修改提交并推送到 `main`，GitHub 会自动重新发布；部署状态可在仓库的 **Actions** 和 **Settings → Pages** 查看。
 
-发布地址为 <https://ypnomania.github.io/Greek-Numbers/>。私有仓库能否使用 Pages 取决于仓库所属账号的 GitHub 套餐。
+发布地址为 <https://ypnomania.github.io/Greek-Numbers/>，已启用 HTTPS。仓库为公开仓库。
 
 ## 维护
 
