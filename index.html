@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f6f9"><meta name="apple-mobile-web-app-capable" content="yes">
+<title>Greek Numbers 98 · v7</title>
+<style>
+:root{--bg:#f4f6f9;--panel:#fff;--ink:#202c3e;--muted:#697587;--line:#dce3eb;--blue:#245dd8;--soft:#edf2fc;--good:#187351;--bad:#b33737;--amber:#94651a}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}main{max-width:900px;margin:auto}h1{font-size:25px;letter-spacing:-.7px;margin:0}h2{font-size:18px;margin:0 0 12px}h3{font-size:15px;margin:14px 0 8px}p{margin:8px 0}header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}header span{font-size:12px;color:var(--muted)}button,input,select{font:inherit}button,select,input{border:1px solid var(--line);border-radius:11px;background:var(--panel);color:var(--ink);min-height:44px}button{cursor:pointer;padding:8px 12px;touch-action:manipulation;-webkit-tap-highlight-color:transparent}button:disabled{opacity:.45;cursor:default}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #86a8ee;outline-offset:2px}button.primary{background:var(--blue);color:white;border-color:var(--blue);font-weight:650}button.danger{color:var(--bad)}input,select{padding:8px 10px;font-size:16px;width:100%;min-width:0}input[type=checkbox]{width:20px;min-height:20px}label{font-size:12px;color:var(--muted);display:block}label input,label select{margin-top:5px}nav{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:12px}nav button{font-weight:600}nav button[aria-selected=true]{background:var(--soft);border-color:#a5bced;color:var(--blue)}.card{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:16px;margin-bottom:12px;box-shadow:0 3px 15px #18223804}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.spread{justify-content:space-between}.muted,.small{color:var(--muted)}.small{font-size:12px}.hidden,[hidden]{display:none!important}.notice{border:1px solid #e4c899;background:#fff8e7;border-radius:11px;padding:11px 13px;margin-bottom:12px;font-size:13px}.notice.error{border-color:#e2aeae;background:#fff1f1;color:var(--bad)}.tag{display:inline-block;padding:3px 8px;border-radius:20px;background:var(--bg);font-size:12px;color:var(--muted)}.tag.good{background:#e9f5ef;color:var(--good)}.tag.warn{background:#fff4df;color:var(--amber)}details>summary{cursor:pointer;min-height:40px;display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px}details>summary:after{content:'＋'}details[open]>summary:after{content:'－'}details .grid{padding:4px 0 10px}.toolbar{margin-top:7px}.toolbar button:first-child{flex:1}.toolbar button{min-width:70px}.question-bar{display:flex;justify-content:space-between;align-items:center;margin:2px 0 6px;gap:8px}.clock{font-size:35px;line-height:1.1;font-weight:700;letter-spacing:-1px;font-variant-numeric:tabular-nums}.clock.warn{color:var(--bad)}.clock small{font-size:13px;font-weight:500;letter-spacing:0;margin-left:4px;color:var(--muted)}.progress{height:4px;border-radius:6px;background:var(--bg);margin:10px 0 12px;overflow:hidden}.progress>i{display:block;height:100%;width:100%;background:var(--blue);transform-origin:left;transform:scaleX(0)}.progress.urgent>i{background:var(--bad)}#answer{height:62px;font-size:29px;text-align:center;letter-spacing:.04em;font-variant-numeric:tabular-nums;background:#fafbfe;border-width:2px}#answer[aria-invalid=true]{border-color:#d98787;background:#fff4f4}#answer.correct{border-color:#78b498;background:#f1f9f5}.feedback{min-height:66px;padding:10px 0 6px;text-align:center;font-size:14px}.feedback .el{display:block;font-size:17px;color:var(--ink);margin-top:3px;overflow-wrap:anywhere}.feedback.good{color:var(--good)}.feedback.bad{color:var(--bad)}.pad{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.pad button{font-size:24px;font-variant-numeric:tabular-nums;min-height:49px;background:#f7f9fc;border-color:#e2e7ef}.pad button.edit{font-size:15px;background:#edf1f7}.pad button:active{background:#dee8f9}.live-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;margin-top:12px;font-size:11px;color:var(--muted)}.live-stats b{display:block;font-size:17px;color:var(--ink);font-variant-numeric:tabular-nums}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0}.metric{padding:12px;background:var(--bg);border-radius:12px}.metric b{font-size:24px;display:block;font-variant-numeric:tabular-nums}.metric span{font-size:12px;color:var(--muted)}.unit-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.unit{display:flex;justify-content:space-between;gap:9px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:11px}.unit .el{display:block;font-size:14px;color:var(--muted)}.unit .value{font-size:18px;font-weight:650}.unit button{font-size:12px;padding:6px 10px;min-height:36px}.unit .small{margin-top:4px}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:9px 7px}th{font-size:12px;color:var(--muted);font-weight:500}td.num{font-variant-numeric:tabular-nums}.history-item{padding:9px 0;border-bottom:1px solid var(--line)}.history-item summary{min-height:28px}.history-item summary:after{content:''}.confusion{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding:9px 0}#sessionEnd .metrics{grid-template-columns:repeat(3,1fr)}.footer-actions{margin-top:12px}.footer-actions button{font-size:13px}.version{font-size:11px;color:var(--muted);text-align:center;margin:18px 0 0}
+@media(min-width:740px){#practiceBody{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}.practice-controls{position:sticky;top:12px}.pad button{min-height:58px}.question-card{padding:22px}}
+@media(max-width:440px){body{padding-left:10px;padding-right:10px}header{margin-bottom:9px}h1{font-size:23px}.card{padding:12px;border-radius:14px;margin-bottom:9px}nav{gap:6px;margin-bottom:9px}nav button{font-size:14px;padding:6px}.grid{gap:8px}.metrics{grid-template-columns:1fr 1fr}.unit-list{grid-template-columns:1fr}.feedback{min-height:61px}.clock{font-size:31px}.pad button{min-height:46px}.live-stats{margin-top:9px}.toolbar{gap:6px}.toolbar button{padding:7px 9px;min-width:0}}
+@media(max-width:739px) and (max-height:820px){body{padding-top:max(8px,env(safe-area-inset-top));padding-bottom:max(10px,env(safe-area-inset-bottom))}header{margin-bottom:6px}nav{margin-bottom:7px}.card{padding:10px;margin-bottom:8px}details>summary{min-height:30px}.toolbar{margin-top:4px}.pad button{font-size:22px;line-height:1.1;min-height:44px;padding:6px}.pad button.edit{font-size:14px}#answer{height:50px;font-size:26px}.feedback{min-height:51px;padding:6px 0}.question-bar{margin-bottom:4px}.progress{margin:7px 0 9px}.live-stats{margin-top:7px}.version{margin-top:9px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<style id="win98-override">
+:root{
+  --bg:#008080;
+  --panel:#c0c0c0;
+  --ink:#000;
+  --muted:#404040;
+  --line:#808080;
+  --blue:#000080;
+  --soft:#d4d0c8;
+  --good:#006000;
+  --bad:#a80000;
+  --amber:#7a5f00;
+}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"MS Sans Serif","Tahoma","Geneva",system-ui,sans-serif;
+  image-rendering:auto;
+}
+main{max-width:980px}
+header{
+  background:linear-gradient(90deg,#000080,#1084d0);
+  color:#fff;
+  padding:6px 8px;
+  margin-bottom:10px;
+  border:2px solid;
+  border-color:#fff #404040 #404040 #fff;
+  box-shadow:inset -1px -1px #808080,inset 1px 1px #dfdfdf;
+}
+header h1{font-size:20px;color:#fff}
+header span{color:#fff;font-size:12px}
+.card{
+  background:var(--panel);
+  border-radius:0;
+  border:2px solid;
+  border-color:#fff #404040 #404040 #fff;
+  box-shadow:inset -1px -1px #808080,inset 1px 1px #dfdfdf;
+  padding:12px;
+}
+button,select,input{
+  border-radius:0 !important;
+  background:var(--panel);
+  color:var(--ink);
+  border:2px solid;
+  border-color:#fff #404040 #404040 #fff;
+  box-shadow:inset -1px -1px #808080,inset 1px 1px #dfdfdf;
+}
+button{
+  padding:6px 10px;
+}
+button.primary{
+  background:var(--panel);
+  color:#000;
+  border-color:#fff #404040 #404040 #fff;
+}
+button:active,
+button[aria-selected=true]{
+  border-color:#404040 #fff #fff #404040 !important;
+  box-shadow:inset -1px -1px #dfdfdf,inset 1px 1px #808080 !important;
+}
+nav{
+  gap:4px;
+  margin-bottom:10px;
+}
+nav button{
+  font-weight:400;
+}
+nav button[aria-selected=true]{
+  background:var(--panel);
+  color:#000;
+}
+.notice{
+  background:#ffffe1;
+  border-radius:0;
+  border:2px solid;
+  border-color:#fff #404040 #404040 #fff;
+  box-shadow:inset -1px -1px #808080,inset 1px 1px #dfdfdf;
+}
+label,.small,.muted,th,.version{color:var(--muted)}
+h2{font-size:16px}
+h3{font-size:14px}
+.question-card,.practice-controls,#sessionEnd,
+#profileView .card{
+  position:relative;
+}
+.question-card::before,
+.practice-controls::before,
+#sessionEnd::before,
+#profileView .card::before{
+  content:attr(data-win-title);
+  display:block;
+  margin:-12px -12px 10px -12px;
+  padding:3px 6px;
+  background:linear-gradient(90deg,#000080,#1084d0);
+  color:#fff;
+  font-weight:700;
+  font-size:12px;
+}
+.practice-controls[data-win-title=""]::before,
+.question-card[data-win-title=""]::before,
+#sessionEnd[data-win-title=""]::before,
+#profileView .card[data-win-title=""]::before{
+  display:none;
+}
+#answer{
+  background:#fff;
+  border-width:2px;
+  border-color:#404040 #fff #fff #404040;
+  box-shadow:none;
+}
+#answer.correct{
+  background:#fff;
+}
+.pad button{
+  background:var(--panel);
+}
+.metric{
+  background:#fff;
+  border:2px solid;
+  border-color:#404040 #fff #fff #404040;
+  border-radius:0;
+}
+.unit{
+  background:#fff;
+  border-radius:0;
+  border:2px solid;
+  border-color:#404040 #fff #fff #404040;
+}
+.tag{
+  background:#fff;
+  border:1px solid #808080;
+  border-radius:0;
+}
+.progress{
+  background:#fff;
+  border:1px solid #808080;
+  height:10px;
+}
+.progress>i{
+  background:#000080;
+}
+table{background:#fff}
+th,td{border-bottom:1px solid #b0b0b0}
+details>summary{
+  color:#000;
+}
+#profileCondition,#profileExtra{display:none !important}
+#feedback{
+  min-height:58px;
+}
+.live-stats b,
+.metric b,
+.clock,
+#answer{
+  font-family:"Tahoma","MS Sans Serif",system-ui,sans-serif;
+}
+.version{
+  color:#fff;
+  opacity:.85;
+}
+@media(max-width:440px){
+  header h1{font-size:18px}
+}
+</style>
+
+</head>
+<body><main>
+<header><h1>Greek Numbers</h1><span id="saveBadge">连接档案…</span></header>
+<noscript><p class="notice error">请在支持 JavaScript 的浏览器中打开。</p></noscript>
+<div id="notice" class="notice hidden" role="status"></div>
+<nav aria-label="训练分类"><button data-tab="number" aria-selected="true">数字</button><button data-tab="phone" aria-selected="false">电话</button><button data-tab="profile" aria-selected="false">档案</button></nav>
+<div id="practiceView">
+<div id="practiceBody">
+<section class="card practice-controls" data-win-title="控制面板">
+<div class="grid">
+<label>训练方式<select id="regime"><option value="timed">5 秒限时</option><option value="free">自由练习</option></select></label>
+<label id="strategyLabel">出题<select id="strategy"><option value="adaptive">自适应</option><option value="diagnostic">单项诊断</option><option value="balanced">位数均衡</option><option value="uniform">完全随机</option><option value="due">到期复习</option></select></label>
+<label id="phonePatternLabel" hidden>分组<select id="phonePattern"><option value="pairs">2 + 2 + 2 + 2 + 2</option><option value="triple">3 + 3 + 2 + 2</option><option value="mixed23">2 + 2 + 3 + 3</option><option value="mixed">混合分组</option><option value="digits">逐位基础</option></select></label>
+</div>
+<details id="settingsPanel"><summary>设置</summary><div class="grid">
+<label id="maxLabel">数字范围<select id="max"><option value="99">0–99</option><option value="999">0–999</option><option value="9999">0–9999</option></select></label>
+<label>语速<select id="rate"><option value="0.8">0.8×</option><option value="1">1.0×</option><option value="1.2">1.2×</option></select></label>
+<label id="groupLabel">单项分组<select id="group"><option value="all">全部</option><option value="个位">个位</option><option value="10–19">10–19</option><option value="整十">整十</option><option value="整百">整百</option><option value="整千">整千</option></select></label>
+<label id="ratioLabel">自适应单项比例<select id="unitRatio"><option value="0.25">25%</option><option value="0.5">50%</option><option value="0.75">75%</option><option value="1">100%</option></select></label>
+
+<label>键盘<select id="keyboard"><option value="pad">页面数字键盘</option><option value="system">系统键盘</option></select></label>
+<label>每组题数<select id="goal"><option value="50">50 题</option><option value="100">100 题</option><option value="0">不限</option></select></label>
+<label>答对后<select id="autoNext"><option value="650">自动下一题</option><option value="0">手动下一题</option></select></label>
+<label id="focusLabel" style="grid-column:1/-1">专项数词<input id="focus" type="text" placeholder="全部" autocomplete="off" aria-describedby="focusFormat"><span id="focusFormat" class="small">用逗号分隔，如 20,50,600。留空练全部。</span></label>
+<label style="grid-column:1/-1">希腊语声音<select id="voice"><option value="">查找中…</option></select></label>
+</div><div class="row"><button id="refreshVoices">刷新语音</button><button id="clearFocus">清除专项</button></div><div class="row" style="margin-top:8px"><button id="reveal" disabled>显示答案</button><button id="slower" disabled>慢速重听</button></div></details>
+<div class="row toolbar"><button id="play" class="primary" disabled>开始</button><button id="pause" disabled>暂停</button><button id="next" disabled>下一题</button></div>
+</section>
+<section class="card question-card" data-win-title="听写">
+<div class="question-bar"><div><span id="questionLabel" class="tag">准备</span><div id="questionMeta" class="small" style="margin-top:4px">0 / 50</div></div><div class="clock" id="clock">—<small>s</small></div></div>
+<div id="timeProgress" class="progress"><i></i></div>
+<input id="answer" type="text" inputmode="none" readonly enterkeyhint="done" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="—" aria-label="听写答案" aria-invalid="false">
+<div id="feedback" class="feedback" aria-live="polite">点击开始</div>
+<div class="pad" id="pad" aria-label="数字键盘">
+<button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+<button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+<button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+<button data-key="clear" class="edit">清空</button><button data-key="0">0</button><button data-key="back" class="edit" aria-label="删除最后一位">⌫</button>
+</div>
+<div class="live-stats"><span>首答正确<b id="liveFirst">—</b></span><span>1 秒内<b id="liveFast">0</b></span><span>答错<b id="liveWrong">0</b></span><span>超时<b id="liveTimeout">0</b></span></div>
+</section>
+</div>
+<section id="sessionEnd" class="card" data-win-title="结果" hidden><h2>本组完成</h2><div id="sessionMetrics" class="metrics"></div><button id="continueSession" class="primary">再练一组</button></section>
+</div>
+<div id="profileView" hidden>
+<section class="card" data-win-title="学习档案"><div class="row spread"><h2 style="margin:0">学习档案</h2><select id="profileMode" style="width:auto"><option value="number">数字</option><option value="phone">电话</option></select></div><div id="profileCondition" class="small hidden" style="margin-top:6px"></div><div id="profileMetrics" class="metrics"></div><div id="profileExtra" class="small hidden"></div></section>
+<section class="card" id="unitSection" data-win-title="单项熟练度"><div class="row spread"><h2 style="margin:0">单项熟练度</h2><select id="unitFilter" style="width:auto"><option value="all">全部</option><option value="个位">个位</option><option value="10–19">10–19</option><option value="整十">整十</option><option value="整百">整百</option><option value="整千">整千</option></select></div><div class="row" style="margin:12px 0"><button id="startDiagnostic" class="primary">单项诊断</button><button id="startDue">到期复习</button><span class="small" id="dueCount"></span></div><div id="units" class="unit-list"></div></section>
+<section class="card" data-win-title="近 7 天"><h2>近 7 天</h2><div class="table-wrap"><table><thead><tr><th>日期</th><th>题数</th><th>首答</th><th>1s 内</th><th>超时</th></tr></thead><tbody id="dailyRows"></tbody></table></div></section>
+<section class="card" data-win-title="输入差异"><h2>输入差异</h2><div id="confusions"></div></section>
+<section class="card" data-win-title="最近作答"><h2>最近作答</h2><div id="history"></div></section>
+<section class="card" data-win-title="数据"><h2>数据</h2><div id="storageInfo" class="small"></div><div class="row footer-actions"><button id="export">导出备份</button><button id="import">导入备份</button><button id="retrySave" hidden>重试保存</button><button id="reset" class="danger">清空</button></div><input id="importFile" type="file" accept=".json,application/json" hidden></section>
+</div>
+<div class="version">Greek Numbers 98 · v7</div>
+</main>
+<script>/* Greek Number Listening v4 — pure domain functions; no DOM or persistence. */
+(function (root) {
+  'use strict';
+  const U = ['μηδέν','ένα','δύο','τρία','τέσσερα','πέντε','έξι','επτά','οκτώ','εννέα'];
+  const T = ['','δέκα','είκοσι','τριάντα','σαράντα','πενήντα','εξήντα','εβδομήντα','ογδόντα','ενενήντα'];
+  const TEEN = ['δέκα','έντεκα','δώδεκα','δεκατρία','δεκατέσσερα','δεκαπέντε','δεκαέξι','δεκαεπτά','δεκαοκτώ','δεκαεννέα'];
+  const H = ['','εκατό','διακόσια','τριακόσια','τετρακόσια','πεντακόσια','εξακόσια','επτακόσια','οκτακόσια','εννιακόσια'];
+  const TH = ['','χίλια','δύο χιλιάδες','τρεις χιλιάδες','τέσσερις χιλιάδες','πέντε χιλιάδες','έξι χιλιάδες','επτά χιλιάδες','οκτώ χιλιάδες','εννέα χιλιάδες'];
+  function greek(n) {
+    if (!Number.isInteger(n) || n < 0 || n > 9999) throw new RangeError('Number must be an integer from 0 to 9999');
+    if (n < 10) return U[n];
+    if (n < 20) return TEEN[n - 10];
+    if (n < 100) return T[Math.floor(n/10)] + (n%10 ? ' ' + U[n%10] : '');
+    if (n < 1000) return (Math.floor(n/100) === 1 && n%100 ? 'εκατόν' : H[Math.floor(n/100)]) + (n%100 ? ' ' + greek(n%100) : '');
+    return TH[Math.floor(n/1000)] + (n%1000 ? ' ' + greek(n%1000) : '');
+  }
+  const ATOMS = [];
+  const add = (key,group,value) => ATOMS.push(Object.freeze({key,group,value,label:greek(value)}));
+  for(let i=0;i<=9;i++) add('o:'+i,'个位',i);
+  for(let i=10;i<=19;i++) add('teen:'+i,'10–19',i);
+  for(let i=2;i<=9;i++) add('t:'+i,'整十',i*10);
+  for(let i=1;i<=9;i++) add('h:'+i,'整百',i*100);
+  for(let i=1;i<=9;i++) add('th:'+i,'整千',i*1000);
+  const BY_KEY = Object.fromEntries(ATOMS.map(a=>[a.key,a]));
+  function components(n) {
+    greek(n); // Validate range before decomposition.
+    if(n===0) return ['o:0'];
+    const keys=[], th=Math.floor(n/1000), h=Math.floor(n%1000/100), tail=n%100;
+    if(th) keys.push('th:'+th);
+    if(h) keys.push('h:'+h);
+    if(tail>=10 && tail<=19) keys.push('teen:'+tail);
+    else {if(tail>=20) keys.push('t:'+Math.floor(tail/10)); if(tail%10) keys.push('o:'+tail%10);}
+    return keys;
+  }
+  const PATTERNS = {pairs:[2,2,2,2,2],triple:[3,3,2,2],mixed23:[2,2,3,3]};
+  function spokenChunk(s) {
+    if(!/^\d{1,3}$/.test(s)) throw new TypeError('Invalid phone chunk');
+    // A leading zero is significant in phone dictation. It is never discarded.
+    if(s[0]==='0') return U[0] + (s.length>1 ? ' ' + spokenChunk(s.slice(1)) : '');
+    return greek(Number(s));
+  }
+  function phoneParts(s, pattern) {
+    if(!/^69\d{8}$/.test(s)) throw new TypeError('Expected a 10-digit simulated 69… number');
+    const sizes = pattern==='digits' ? Array(10).fill(1) : PATTERNS[pattern];
+    if(!sizes) throw new TypeError('Unknown grouping pattern');
+    let offset=0;
+    return sizes.map(size=>{const digits=s.slice(offset,offset+=size);return {digits,text:spokenChunk(digits)};});
+  }
+  function int(a,b,rng=Math.random) {return a + Math.floor(rng()*(b-a+1));}
+  function pick(xs,rng=Math.random) {if(!xs.length) throw new RangeError('Empty sampling pool'); return xs[int(0,xs.length-1,rng)];}
+  function weighted(xs,weights,rng=Math.random) {
+    if(!xs.length || xs.length!==weights.length || weights.some(w=>!Number.isFinite(w)||w<=0)) throw new TypeError('Positive sampling weights required');
+    const sum=weights.reduce((a,b)=>a+b,0), r=rng()*sum;
+    let c=0; for(let i=0;i<xs.length;i++){c+=weights[i];if(r<c)return xs[i];}
+    return xs[xs.length-1]; // Endpoint of the cumulative distribution.
+  }
+  function median(xs) {if(!xs.length)return null;const a=[...xs].sort((a,b)=>a-b),m=Math.floor(a.length/2);return a.length%2?a[m]:(a[m-1]+a[m])/2;}
+  function quantile(xs,p) {if(!xs.length)return null;const a=[...xs].sort((a,b)=>a-b),i=(a.length-1)*p,l=Math.floor(i);return a[l]+(a[Math.ceil(i)]-a[l])*(i-l);}
+  const SCORED = new Set(['correct','wrong','timeout','revealed','skipped']);
+  function isScored(e) {return SCORED.has(e.result);}
+  function clean(e) {return e.result==='correct' && e.replays===0 && e.edits===0 && !e.pasted && e.wrongInputs.length===0;}
+  function fluent(e) {return clean(e) && (e.completedDuringAudio || (e.completionMs!==null && e.completionMs<=1000));}
+  function grade(e) {
+    if(e.result==='timeout')return '超时';
+    if(e.result==='wrong')return '答错';
+    if(e.result==='revealed')return '看了答案';
+    if(e.result==='skipped')return '跳过';
+    if(e.result==='interrupted')return '已中断';
+    if(e.result==='audio_error')return '播放失败';
+    if(e.replays)return '重听后答对';
+    if(e.pasted)return '粘贴答案';
+    if(e.completedDuringAudio)return '随听完成';
+    if(e.completionMs<=1000)return '很熟练';
+    if(e.completionMs<=2000)return '稍有迟疑';
+    return '需强化';
+  }
+  function condition(e) {return [e.mode,e.regime,e.rate,e.inputPolicy,e.keyboard,e.mode==='phone'?e.phoneStyle:''].join('|');}
+  function settingsCondition(s,mode) {return [mode,s.regime,s.rate,mode==='phone'?'during':s.inputPolicy,s.keyboard,mode==='phone'?s.phonePattern:''].join('|');}
+  function summary(events) {
+    const scored=events.filter(isScored);
+    const correct=scored.filter(e=>e.result==='correct');
+    const times=correct.filter(e=>e.completionMs!==null&&!e.completedDuringAudio).map(e=>e.completionMs);
+    return {n:scored.length, first:correct.length, eventual:correct.length,
+      fast:scored.filter(fluent).length,
+      wrong:scored.filter(e=>e.result==='wrong').length,
+      timeout:scored.filter(e=>e.result==='timeout').length,
+      assisted:scored.filter(e=>e.replays>0&&e.result==='correct').length,
+      interrupted:events.filter(e=>!isScored(e)).length, median:median(times),p90:quantile(times,.9)};
+  }
+  // For integer alpha,beta: Pr[p > x] for p~Beta(alpha,beta) equals
+  // the Binomial(alpha+beta-1,x) CDF at alpha-1. No fitted weights.
+  function betaAbove(alpha,beta,x=.8) {
+    const n=alpha+beta-1;let term=(1-x)**n, sum=term;
+    for(let k=1;k<alpha;k++){term*=((n-k+1)/k)*(x/(1-x));sum+=term;}
+    return Math.min(1,sum);
+  }
+  const REVIEW_DAYS=[0,1,3,7,14,30];
+  function reviewState(events) {
+    let box=0,due=0,lastPromotionDay=null;
+    for(const e of [...events].sort((a,b)=>a.at-b.at)){
+      if(!fluent(e)){box=0;due=e.at;continue;}
+      if(e.day!==lastPromotionDay){box=Math.min(5,box+1);lastPromotionDay=e.day;}
+      due=e.at+REVIEW_DAYS[Math.max(1,box)]*86400000;
+    }
+    return {box,due};
+  }
+  function unitModel(events,key,cond) {
+    const all=events.filter(e=>isScored(e)&&e.mode==='number'&&e.kind==='atom'&&e.keys[0]===key&&condition(e)===cond).sort((a,b)=>a.at-b.at);
+    const recent=all.slice(-20), successes=recent.filter(fluent).length, n=recent.length;
+    const alpha=1+successes,beta=1+n-successes;
+    return {n,total:all.length,fast:successes,alpha,beta,failure:beta/(alpha+beta),
+      stable:n>0&&betaAbove(alpha,beta)>=.95,
+      median:median(recent.filter(clean).map(e=>e.completionMs).filter(x=>x!==null)),
+      ...reviewState(all)};
+  }
+  const ALL_NUMBERS=Array.from({length:10000},(_,n)=>({n,keys:components(n)}));
+  function scopeAtoms(settings) {
+    return ATOMS.filter(a=>a.value<=settings.max && (!settings.group||settings.group==='all'||a.group===settings.group) &&
+      (!settings.focus.length||settings.focus.includes(a.value)));
+  }
+  function generateNumber(s, events, last=null, rng=Math.random, now=Date.now()) {
+    if(s.strategy==='uniform')return {n:int(0,s.max,rng),sampling:'uniform'};
+    if(s.strategy==='balanced'){
+      const bands=[[0,9],[10,99],[100,999],[1000,9999]].filter(([min])=>min<=s.max);
+      const [min,max]=pick(bands,rng);return {n:int(min,Math.min(max,s.max),rng),sampling:'balanced'};
+    }
+    const atoms=scopeAtoms(s);if(!atoms.length)throw new RangeError('所选范围没有可练的数词');
+    const cond=settingsCondition(s,'number'),models=atoms.map(a=>unitModel(events,a.key,cond));
+    if(s.strategy==='due'){
+      const due=atoms.filter((a,i)=>models[i].total&&models[i].due<=now);
+      if(!due.length)return null;
+      const options=due.length>1?due.filter(a=>a.value!==last):due;
+      const a=pick(options,rng);return {n:a.value,sampling:'due'};
+    }
+    const options=atoms.filter(a=>atoms.length===1||a.value!==last);
+    const modelFor=a=>models[atoms.indexOf(a)];
+    let anchor;
+    if(s.strategy==='diagnostic'){
+      const least=Math.min(...options.map(a=>modelFor(a).total));
+      anchor=pick(options.filter(a=>modelFor(a).total===least),rng);
+    }else anchor=weighted(options,options.map(a=>modelFor(a).failure),rng);
+    if(s.strategy==='diagnostic'||rng()<s.unitRatio||anchor.value===0)return {n:anchor.value,sampling:s.strategy};
+    // Exact candidate set, not a small random candidate approximation.
+    const pool=ALL_NUMBERS.filter(x=>x.n<=s.max&&x.n!==last&&x.keys.includes(anchor.key));
+    return {n:pick(pool,rng).n,sampling:'adaptive-combination'};
+  }
+  function confusionPairs(events) {
+    const map=new Map();
+    for(const e of events.filter(isScored)){
+      const distinct=new Set(e.wrongInputs.map(w=>w.value));
+      for(const actual of distinct){
+        if(actual.length!==e.target.length)continue;
+        const diffs=[...e.target].map((c,i)=>c===actual[i]?null:i).filter(i=>i!==null);
+        let title=actual+' → '+e.target;
+        if(e.mode==='number'&&diffs.length===1){const i=diffs[0],power=10**(e.target.length-i-1);title=Number(actual[i])*power+' → '+Number(e.target[i])*power;}
+        const key=e.mode+'|'+title;
+        const row=map.get(key)||{mode:e.mode,title,count:0};row.count++;map.set(key,row);
+      }
+    }
+    return [...map.values()].sort((a,b)=>b.count-a.count);
+  }
+  function validateEvent(e) {
+    if(!e||typeof e.id!=='string'||!Number.isFinite(e.at)||typeof e.day!=='string'||!['number','phone'].includes(e.mode)||
+      !['timed','free'].includes(e.regime)||!['atom','compound','phone'].includes(e.kind)||!['after','during'].includes(e.inputPolicy)||
+      !['pad','system'].includes(e.keyboard)||typeof e.pasted!=='boolean'||
+      !(SCORED.has(e.result)||['interrupted','audio_error'].includes(e.result))||!/^\d{1,10}$/.test(e.target)||
+      !Array.isArray(e.keys)||e.keys.some(k=>!BY_KEY[k])||!Array.isArray(e.parts)||!Array.isArray(e.wrongInputs)||
+      !Number.isInteger(e.replays)||e.replays<0||!Number.isInteger(e.edits)||e.edits<0||!Number.isFinite(e.rate)||e.rate<=0||
+      (e.completionMs!==null&&(!Number.isFinite(e.completionMs)||e.completionMs<0))||typeof e.completedDuringAudio!=='boolean')throw new TypeError('作答记录格式无效');
+    if(e.mode==='number'&&(String(Number(e.target))!==e.target||Number(e.target)>9999||JSON.stringify(e.keys)!==JSON.stringify(components(Number(e.target)))))throw new TypeError('数字记录不一致');
+    if(e.mode==='phone'&&(!/^69\d{8}$/.test(e.target)||e.parts.map(p=>p.digits).join('')!==e.target))throw new TypeError('电话记录不一致');
+    if(e.parts.some(p=>!p||typeof p.digits!=='string'||typeof p.text!=='string')||e.wrongInputs.some(w=>!w||!/^\d{1,12}$/.test(w.value)||!Number.isFinite(w.ms)))throw new TypeError('输入记录格式无效');
+    return e;
+  }
+  const api={U,ATOMS,BY_KEY,PATTERNS,greek,components,spokenChunk,phoneParts,int,pick,weighted,median,quantile,isScored,clean,fluent,grade,condition,settingsCondition,summary,betaAbove,reviewState,unitModel,scopeAtoms,generateNumber,confusionPairs,validateEvent};
+  if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.GreekCore=Object.freeze(api);
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script>
+<script>/* Greek Number Listening v7 — compact event persistence. */
+(()=>{
+'use strict';
+const C=window.GreekCore, $=id=>document.getElementById(id);
+const DEFAULTS={max:9999,regime:'timed',strategy:'adaptive',rate:1,group:'all',focus:[],unitRatio:.5,inputPolicy:'during',keyboard:'pad',goal:50,autoNext:650,phonePattern:'pairs',voiceURI:''};
+const OUTCOMES=new Set(['correct','wrong','timeout','revealed','skipped','interrupted','audio_error']);
+const DB_NAME='GreekNumberListening.v4', DB_VERSION=2;
+let db=null,meta={schemaVersion:7,settings:{...DEFAULTS}},events=[],voices=[];
+
+const RESULT_CODES=['correct','wrong','timeout','revealed','skipped','interrupted','audio_error'];
+const PHONE_CODES=['pairs','triple','mixed23','mixed','digits'];
+const STRATEGY_CODES=['adaptive','diagnostic','balanced','uniform','due'];
+const GROUP_CODES=['all','个位','10–19','整十','整百','整千'];
+
+function codeOf(list,value,label){const i=list.indexOf(value);if(i<0)throw new TypeError('无效'+label);return i;}
+function msValue(v){return v===null||v===undefined?null:Math.round(v);}
+
+function normalizeImportedEvent(e){
+  const n={...e};
+  if(n.result==='corrected')n.result='correct';
+  if(!n.inputPolicy)n.inputPolicy='during';
+  if(!n.keyboard)n.keyboard='pad';
+  if(!Array.isArray(n.wrongInputs))n.wrongInputs=[];
+  if(!Array.isArray(n.parts)){
+    const phonePattern=n.phoneStyle==='mixed'?(Object.keys(C.PATTERNS).includes(n.sampling)?n.sampling:'pairs'):(n.phoneStyle||'pairs');
+    n.parts=n.mode==='phone'?C.phoneParts(String(n.target),phonePattern):[{digits:String(n.target),text:C.greek(Number(n.target))}];
+  }
+  if(!Array.isArray(n.keys))n.keys=n.mode==='number'?C.components(Number(n.target)):[];
+  n.measurementVersion=7;
+  C.validateEvent(n);
+  return n;
+}
+
+function packEvent(e,sessionRef=e.sessionId){
+  const result=e.result==='corrected'?'correct':e.result;
+  const flags=(e.pasted?1:0)|(e.completedDuringAudio?2:0);
+  const entered=(result==='correct'&&e.entered===e.target)?'':(e.entered||'');
+  const packed=[
+    e.id,sessionRef,e.at,e.mode==='phone'?1:0,Number(e.target),
+    codeOf(RESULT_CODES,result,'结果'),e.regime==='free'?1:0,e.rate,
+    e.keyboard==='system'?1:0,e.mode==='phone'?codeOf(PHONE_CODES,e.phoneStyle,'电话分组'):-1,
+    entered,e.edits||0,e.replays||0,flags,
+    msValue(e.completionMs),msValue(e.firstKeyMs),msValue(e.typingMs)
+  ];
+  if(e.mode==='phone'&&e.phoneStyle==='mixed'){
+    const sizes=e.parts.map(p=>p.digits.length);
+    const pattern=Object.keys(C.PATTERNS).find(key=>C.PATTERNS[key].length===sizes.length&&C.PATTERNS[key].every((size,i)=>size===sizes[i]));
+    // Keep the selected mixed mode for statistics and retain its actual grouping.
+    packed.push(codeOf(PHONE_CODES,pattern,'实际电话分组'));
+  }
+  return packed;
+}
+
+function unpackEvent(a,sessions=null){
+  if(!Array.isArray(a)||a.length<17)throw new TypeError('紧凑记录格式无效');
+  const [id,sref,at,modeCode,targetNum,resultCode,regimeCode,rate,keyboardCode,phoneCode,enteredPacked,edits,replays,flags,completionMs,firstKeyMs,typingMs]=a;
+  const mode=modeCode===1?'phone':'number';
+  const target=String(targetNum);
+  const sessionId=sessions? sessions[sref] : sref;
+  if(typeof id!=='string'||typeof sessionId!=='string'||!Number.isFinite(at))throw new TypeError('紧凑记录标识无效');
+  const result=RESULT_CODES[resultCode];
+  if(!result)throw new TypeError('紧凑记录结果无效');
+  const phoneStyle=mode==='phone'?PHONE_CODES[phoneCode]:'pairs';
+  if(mode==='phone'&&!phoneStyle)throw new TypeError('紧凑电话记录无效');
+  // Older mixed records omitted their grouping; keep their answers readable.
+  const phonePattern=phoneStyle==='mixed'?(a.length>17?PHONE_CODES[a[17]]:'pairs'):phoneStyle;
+  if(phoneStyle==='mixed'&&!Object.keys(C.PATTERNS).includes(phonePattern))throw new TypeError('紧凑电话分组无效');
+  const keys=mode==='number'?C.components(Number(target)):[];
+  const parts=mode==='phone'?C.phoneParts(target,phonePattern):[{digits:target,text:C.greek(Number(target))}];
+  const entered=enteredPacked===''&&result==='correct'?target:String(enteredPacked||'');
+  const completedDuringAudio=Boolean(flags&2);
+  const pasted=Boolean(flags&1);
+  const wrongInputs=result==='wrong'&&entered?[{value:entered,ms:firstKeyMs===null?0:firstKeyMs}]:[];
+  const e={
+    id,sessionId,at,day:dayString(at),mode,kind:mode==='phone'?'phone':keys.length===1?'atom':'compound',
+    target,parts,keys,sampling:'',regime:regimeCode===1?'free':'timed',rate,
+    inputPolicy:'during',keyboard:keyboardCode===1?'system':'pad',phoneStyle,inputEvents:[],voiceURI:'',
+    result,entered,wrongInputs,edits:Number(edits)||0,replays:Number(replays)||0,pasted,
+    completionMs:completionMs===null?null:Number(completionMs),
+    firstKeyMs:firstKeyMs===null?null:Number(firstKeyMs),
+    typingMs:typingMs===null?null:Number(typingMs),
+    decisionMs:null,completedDuringAudio,audioMs:null,errorCode:null,measurementVersion:7
+  };
+  C.validateEvent(e);
+  return e;
+}
+
+function packDBEvent(e){
+  const a=packEvent(e);
+  return {i:a[0],d:a.slice(1)};
+}
+function unpackDBEvent(row){
+  if(!row||typeof row.i!=='string'||!Array.isArray(row.d))throw new TypeError('本地记录格式无效');
+  return unpackEvent([row.i,...row.d]);
+}
+
+function packSettings(s){
+  return [
+    s.max,s.regime==='free'?1:0,codeOf(STRATEGY_CODES,s.strategy,'出题方式'),s.rate,
+    codeOf(GROUP_CODES,s.group,'分组'),s.focus,s.unitRatio,s.keyboard==='system'?1:0,
+    s.goal,s.autoNext,codeOf(PHONE_CODES,s.phonePattern,'电话分组'),s.voiceURI
+  ];
+}
+function unpackSettings(a){
+  if(!Array.isArray(a)||a.length<12)throw new TypeError('备份设置格式无效');
+  return validateSettings({
+    max:Number(a[0]),regime:a[1]===1?'free':'timed',strategy:STRATEGY_CODES[a[2]],rate:Number(a[3]),
+    group:GROUP_CODES[a[4]],focus:Array.isArray(a[5])?a[5]:[],unitRatio:Number(a[6]),
+    inputPolicy:'during',keyboard:a[7]===1?'system':'pad',goal:Number(a[8]),autoNext:Number(a[9]),
+    phonePattern:PHONE_CODES[a[10]],voiceURI:String(a[11]||'')
+  });
+}
+const state={mode:'number',view:'practice',ready:false,writeFailed:false,running:false,q:null,generation:0,
+  utterance:null,raf:0,deadlineTimer:0,nextTimer:0,sessionId:uid(),sessionClosed:false,lastNumber:null,pendingEvent:null};
+function uid(){return Array.from(crypto.getRandomValues(new Uint8Array(6)),x=>x.toString(16).padStart(2,'0')).join('');}
+function dayString(ms=Date.now()){const d=new Date(ms);return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');}
+function settings(){return meta.settings;}
+function message(text,error=false){$('notice').textContent=text;$('notice').className='notice'+(error?' error':'')+(text?'':' hidden');}
+function setText(id,text){$(id).textContent=text;}
+function pct(a,b){return b?(a/b*100).toFixed(1)+'%':'—';}
+function time(ms){return ms===null||ms===undefined?'—':(ms/1000).toFixed(2)+'s';}
+function request(req){return new Promise((resolve,reject)=>{req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});}
+function transactionDone(tx){return new Promise((resolve,reject)=>{tx.oncomplete=resolve;tx.onabort=()=>reject(tx.error||new Error('事务中断'));tx.onerror=()=>reject(tx.error||new Error('事务失败'));});}
+function openDB(){
+  return new Promise((resolve,reject)=>{
+    if(!window.indexedDB){reject(new Error('当前环境未提供 IndexedDB'));return;}
+    const req=indexedDB.open(DB_NAME,DB_VERSION);
+    req.onupgradeneeded=()=>{
+      const d=req.result;
+      if(!d.objectStoreNames.contains('meta'))d.createObjectStore('meta');
+      if(!d.objectStoreNames.contains('events7'))d.createObjectStore('events7',{keyPath:'i'});
+    };
+    req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);
+    req.onblocked=()=>message('请关闭这个训练器的其他标签页，再重新打开。',true);
+  });
+}
+async function writeMeta(nextMeta=meta){const tx=db.transaction('meta','readwrite'),done=transactionDone(tx);tx.objectStore('meta').put(nextMeta,'main');await done;}
+async function saveEvent(e){const tx=db.transaction('events7','readwrite'),done=transactionDone(tx);tx.objectStore('events7').put(packDBEvent(e));await done;}
+function storageStatus(){
+  setText('saveBadge',state.writeFailed?'保存失败':state.ready?'已保存':'连接档案…');
+  setText('storageInfo',state.writeFailed?'保存失败':events.length+' 条记录');
+  $('retrySave').hidden=!state.writeFailed;
+}
+function validateSettings(s){
+  if(!s||typeof s!=='object')throw new TypeError('设置格式无效');
+  const rules={max:[99,999,9999],regime:['timed','free'],strategy:['adaptive','diagnostic','balanced','uniform','due'],rate:[.8,1,1.2],
+    group:['all','个位','10–19','整十','整百','整千'],unitRatio:[.25,.5,.75,1],inputPolicy:['after','during'],keyboard:['pad','system'],goal:[0,50,100],autoNext:[0,650],phonePattern:['pairs','triple','mixed23','mixed','digits']};
+  for(const [key,allowed] of Object.entries(rules))if(!allowed.includes(s[key]))throw new TypeError('无效设置：'+key);
+  if(!Array.isArray(s.focus)||s.focus.some(v=>!C.ATOMS.some(a=>a.value===v))||typeof s.voiceURI!=='string')throw new TypeError('专项或语音设置无效');
+  const normalized=Object.fromEntries([...Object.keys(DEFAULTS)].map(k=>[k,k==='focus'?[...new Set(s.focus)]:s[k]]));
+  normalized.inputPolicy='during';
+  return normalized;
+}
+function syncControls(){
+  for(const k of ['max','regime','strategy','rate','group','unitRatio','keyboard','goal','autoNext','phonePattern'])$(k).value=String(settings()[k]);
+  $('focus').value=settings().focus.join(', ');
+  $('pad').hidden=settings().keyboard!=='pad';
+  for(const k of ['maxLabel','strategyLabel','groupLabel','ratioLabel','focusLabel'])$(k).hidden=state.mode==='phone';
+  $('phonePatternLabel').hidden=state.mode!=='phone';
+  const weighted=!['uniform','balanced'].includes(settings().strategy);
+  for(const k of ['groupLabel','ratioLabel','focusLabel'])$(k).hidden=state.mode==='phone'||!weighted;
+  $('clearFocus').hidden=state.mode!=='number'||!weighted;
+  updateUI();
+}
+function selectedVoice(){return voices.find(v=>v.voiceURI===settings().voiceURI)||null;}
+function populateVoices(){
+  if(!('speechSynthesis' in window)||!('SpeechSynthesisUtterance' in window)){message('当前浏览器未提供语音合成，请使用 Safari。',true);updateUI();return;}
+  const previous=settings().voiceURI;
+  voices=speechSynthesis.getVoices().filter(v=>/^el(?:[-_]|$)/i.test(v.lang)).sort((a,b)=>Number(b.localService)-Number(a.localService)||a.name.localeCompare(b.name));
+  $('voice').replaceChildren();
+  if(!voices.length){const o=new Option('未检测到希腊语声音','');$('voice').add(o);updateUI();return;}
+  for(const v of voices)$('voice').add(new Option(v.name+' · '+(v.localService?'本机':'联网'),v.voiceURI));
+  if(!previous)settings().voiceURI=voices[0].voiceURI;
+  if(voices.some(v=>v.voiceURI===settings().voiceURI))$('voice').value=settings().voiceURI;
+  else {const missing=new Option('原声音不可用，请重新选择',settings().voiceURI);$('voice').add(missing);$('voice').value=settings().voiceURI;}
+  updateUI();
+}
+function activeQuestion(){const q=state.q;return q&&!q.done;}
+function canInput(){const q=state.q;return Boolean(state.running&&q&&!q.done&&q.firstSpeechStart!==null&&
+  !state.writeFailed&&state.view==='practice');}
+function sessionEvents(){return events.filter(e=>e.sessionId===state.sessionId&&e.mode===state.mode);}
+function updateUI(){
+  const q=state.q,active=activeQuestion(),ok=state.ready&&!state.writeFailed&&state.pendingEvent===null&&selectedVoice()!==null;
+  let label='开始';
+  if(state.running&&active)label=q.audioEnd===null?'播放中':'重听';
+  else if(q&&q.done&&state.running)label='重听答案';
+  else if(q&&!state.sessionClosed)label='继续';
+  $('play').textContent=label;
+  $('play').disabled=!ok||(state.running&&active&&q.regime==='timed');
+  $('pause').disabled=!state.running;
+  $('next').textContent=active?'跳过':'下一题';
+  $('next').disabled=!ok||state.pendingEvent!==null||(!state.running&&!q)||Boolean(active&&q.firstSpeechStart===null);
+  $('reveal').disabled=!state.running||!active||q.firstSpeechStart===null;
+  $('slower').disabled=!ok||!q||Boolean(active&&q.regime==='timed');
+  $('answer').readOnly=settings().keyboard==='pad'||!canInput();
+  $('answer').inputMode=settings().keyboard==='pad'?'none':'numeric';
+  for(const btn of $('pad').querySelectorAll('button'))btn.disabled=!canInput();
+  const totals=C.summary(sessionEvents());
+  setText('questionMeta',totals.n+' / '+(settings().goal||'∞'));
+  setText('liveFirst',pct(totals.first,totals.n));setText('liveFast',totals.fast);setText('liveWrong',totals.wrong);setText('liveTimeout',totals.timeout);
+}
+function cancelTimers(){clearTimeout(state.deadlineTimer);clearTimeout(state.nextTimer);cancelAnimationFrame(state.raf);state.deadlineTimer=0;state.nextTimer=0;state.raf=0;}
+function cancelSpeech(){state.generation++;state.utterance=null;if('speechSynthesis' in window)speechSynthesis.cancel();}
+function clearClock(){setText('clock','—');const small=document.createElement('small');small.textContent='s';$('clock').append(small);$('clock').classList.remove('warn');$('timeProgress').classList.remove('urgent');$('timeProgress').firstElementChild.style.transform='scaleX(0)';}
+function showClock(ms,countdown=false){
+  const value=Math.max(0,ms);setText('clock',(value/1000).toFixed(1));const small=document.createElement('small');small.textContent='s';$('clock').append(small);
+  $('clock').classList.toggle('warn',countdown&&value<=1000);
+  $('timeProgress').classList.toggle('urgent',countdown&&value<=1000);
+  $('timeProgress').firstElementChild.style.transform='scaleX('+(countdown?Math.max(0,Math.min(1,value/5000)):Math.min(1,value/5000))+')';
+}
+function clockFrame(){
+  const q=state.q;if(!q||q.done||q.audioEnd===null||!state.running)return;
+  const now=performance.now();
+  if(q.regime==='timed'&&now>=q.deadline){finish('timeout');return;}
+  showClock(q.regime==='timed'?q.deadline-now:now-q.audioEnd,q.regime==='timed');
+  state.raf=requestAnimationFrame(clockFrame);
+}
+function deadlineCheck(){const q=state.q;if(!q||q.done||q.regime!=='timed'||q.audioEnd===null)return;
+  const remaining=q.deadline-performance.now();if(remaining<=0)finish('timeout');else state.deadlineTimer=setTimeout(deadlineCheck,remaining);
+}
+function feedback(text,greekText='',style=''){
+  const node=$('feedback');node.className='feedback'+(style?' '+style:'');node.replaceChildren(document.createTextNode(text));
+  if(greekText){const span=document.createElement('span');span.lang='el';span.className='el';span.textContent=greekText;node.append(span);}
+}
+function createQuestion(){
+  const s=structuredClone(settings());
+  let target,parts,keys,kind,sampling;
+  if(state.mode==='number'){
+    const picked=C.generateNumber(s,events,state.lastNumber);
+    if(picked===null)return null;
+    target=String(picked.n);keys=C.components(picked.n);kind=keys.length===1?'atom':'compound';sampling=picked.sampling;
+    parts=[{digits:target,text:C.greek(picked.n)}];state.lastNumber=picked.n;
+  }else{
+    target='69';for(let i=0;i<8;i++)target+=C.int(0,9);
+    const pattern=s.phonePattern==='mixed'?C.pick(Object.keys(C.PATTERNS)):s.phonePattern;
+    parts=C.phoneParts(target,pattern);keys=[];kind='phone';sampling=pattern;
+  }
+  return {id:uid(),sessionId:state.sessionId,mode:state.mode,target,parts,keys,kind,sampling,regime:s.regime,rate:s.rate,
+    inputPolicy:'during',keyboard:s.keyboard,phoneStyle:s.phonePattern,inputEvents:[],voiceURI:s.voiceURI,createdAt:Date.now(),firstSpeechStart:null,audioEnd:null,
+    deadline:null,firstInputAt:null,completedAt:null,completedDuringAudio:false,wrongInputs:[],edits:0,replays:0,pasted:false,
+    pendingResult:null,done:false,errorCode:null,value:'',speechCount:0};
+}
+function nextQuestion(){
+  if(!state.ready||state.writeFailed||!selectedVoice())return;
+  cancelTimers();cancelSpeech();
+  let q;
+  try{q=createQuestion();}catch(err){state.running=false;message(err.message,true);updateUI();return;}
+  if(!q){state.running=false;state.q=null;feedback('当前没有到期项目');setText('questionLabel','已完成');clearClock();updateUI();return;}
+  state.q=q;state.running=true;$('sessionEnd').hidden=true;
+  $('answer').value='';$('answer').classList.remove('correct');$('answer').setAttribute('aria-invalid','false');
+  $('answer').placeholder='—';feedback('');clearClock();setText('questionLabel','准备播放');updateUI();
+  speak(q,false);
+}
+function startSession(){
+  if(state.sessionClosed){state.sessionId=uid();state.sessionClosed=false;}
+  message('');state.running=true;nextQuestion();
+}
+function speak(q,slow=false,review=false){
+  const v=voices.find(v=>v.voiceURI===q.voiceURI);
+  if(!v){message('本题使用的声音不可用。请重新选择希腊语声音。',true);state.running=false;updateUI();return;}
+  cancelSpeech();const generation=state.generation;
+  const utterance=new SpeechSynthesisUtterance(q.parts.map(p=>p.text).join(', '));
+  utterance.lang=v.lang;utterance.voice=v;utterance.rate=slow?q.rate*.75:q.rate;
+  state.utterance=utterance;
+  if(!review){q.speechCount++;setText('questionLabel',q.replays?'重听中':'播放中');}
+  utterance.onstart=()=>{
+    if(generation!==state.generation||(!review&&state.q!==q))return;
+    if(!review&&q.firstSpeechStart===null)q.firstSpeechStart=performance.now();
+    updateUI();
+  };
+  utterance.onend=()=>{
+    if(generation!==state.generation||(!review&&state.q!==q))return;
+    state.utterance=null;if(review||q.done)return;
+    if(q.audioEnd===null){
+      q.audioEnd=performance.now();q.deadline=q.regime==='timed'?q.audioEnd+5000:null;
+      if(q.regime==='timed')state.deadlineTimer=setTimeout(deadlineCheck,5000);
+      clockFrame();
+    }
+    setText('questionLabel',q.regime==='timed'?'限时 5s':'自由练习');updateUI();
+  };
+  utterance.onerror=e=>{
+    if(generation!==state.generation||(!review&&state.q!==q))return;
+    state.utterance=null;
+    if(review){message('语音播放失败：'+e.error,true);return;}
+    q.errorCode=String(e.error);finish('audio_error');message('语音播放失败（'+e.error+'）。本题不计分，请点击继续。',true);
+  };
+  try{speechSynthesis.speak(utterance);}catch(err){q.errorCode=err.name;finish('audio_error');message('语音未能开始：'+err.message,true);}
+}
+function replay(slow=false){
+  const q=state.q;if(!q)return;
+  clearTimeout(state.nextTimer);state.nextTimer=0;
+  if(q.done){speak(q,slow,true);return;}
+  if(q.regime==='timed')return;
+  q.replays++;speak(q,slow); // The original audioEnd stays unchanged.
+}
+function normalizeInput(value,phone){
+  let s=value.replace(/[０-９]/g,c=>String(c.charCodeAt(0)-0xff10));
+  if(phone)s=s.replace(/[\s()\-]/g,'');else s=s.replace(/\s/g,'');
+  return /^\d{0,12}$/.test(s)?s:null;
+}
+function acceptInput(value,deleted=false,pasted=false){
+  const q=state.q;if(!canInput()){if(q)$('answer').value=q.value;return;}
+  const now=performance.now();
+  if(q.regime==='timed'&&q.deadline!==null&&now>=q.deadline){finish('timeout');return;}
+  const normalized=normalizeInput(value,q.mode==='phone');
+  if(normalized===null){$('answer').value=q.value;feedback('仅输入数字');return;}
+  if(q.value===normalized)return;
+  if(deleted&&q.value.length)q.edits++;
+  if(pasted)q.pasted=true;
+  q.inputEvents.push({value:normalized,ms:now-q.firstSpeechStart,kind:deleted?'delete':pasted?'paste':'insert'});
+  q.value=normalized;$('answer').value=normalized;
+  if(q.firstInputAt===null&&normalized.length)q.firstInputAt=now;
+  $('answer').setAttribute('aria-invalid','false');feedback('');
+  if(normalized===q.target){
+    q.completedAt=now;
+    q.completedDuringAudio=q.audioEnd===null;
+    finish('correct');
+    return;
+  }
+  if(normalized.length>=q.target.length){
+    if(!q.wrongInputs.some(w=>w.value===normalized))q.wrongInputs.push({value:normalized,ms:now-q.firstSpeechStart});
+    $('answer').setAttribute('aria-invalid','true');
+    finish('wrong');
+  }
+}
+function keypad(key){
+  if(!canInput())return;const q=state.q;
+  if(key==='back')acceptInput(q.value.slice(0,-1),true);
+  else if(key==='clear')acceptInput('',true);
+  else if(q.value.length<12)acceptInput(q.value+key);
+}
+function makeEvent(q,result){
+  const decisionAt=performance.now();
+  const completed=result==='correct';
+  const completionMs=completed&&q.audioEnd!==null?Math.max(0,q.completedAt-q.audioEnd):null;
+  return {id:q.id,sessionId:q.sessionId,at:Date.now(),day:dayString(),mode:q.mode,kind:q.kind,target:q.target,parts:q.parts,keys:q.keys,
+    sampling:q.sampling,regime:q.regime,rate:q.rate,inputPolicy:q.inputPolicy,keyboard:q.keyboard,phoneStyle:q.phoneStyle,inputEvents:q.inputEvents,voiceURI:q.voiceURI,
+    result,entered:q.value,wrongInputs:q.wrongInputs,edits:q.edits,replays:q.replays,pasted:q.pasted,
+    completionMs,firstKeyMs:q.firstInputAt!==null&&q.audioEnd!==null?q.firstInputAt-q.audioEnd:null,
+    typingMs:completed&&q.firstInputAt!==null?q.completedAt-q.firstInputAt:null,
+    decisionMs:q.audioEnd!==null?(result==='timeout'?5000:Math.max(0,decisionAt-q.audioEnd)):null,
+    completedDuringAudio:completed&&q.completedDuringAudio,
+    audioMs:q.audioEnd!==null&&q.firstSpeechStart!==null?q.audioEnd-q.firstSpeechStart:null,
+    errorCode:q.errorCode,measurementVersion:7};
+}
+async function finish(result){
+  const q=state.q;if(!q||q.done||!OUTCOMES.has(result))return;
+  q.done=true;cancelTimers();cancelSpeech();
+  const e=makeEvent(q,result);C.validateEvent(e);
+  events.push(e);state.pendingEvent=e;
+  const shown=q.mode==='phone'?q.parts.map(p=>p.digits).join(' '):q.target;
+  const passed=result==='correct';
+  if(result==='interrupted'){feedback('已暂停');setText('questionLabel','暂停');state.running=false;clearClock();}
+  else if(result==='audio_error'){feedback('播放失败');setText('questionLabel','未计分');state.running=false;clearClock();}
+  else{
+    const rt=e.completedDuringAudio?'随听完成':passed?time(e.completionMs):result==='timeout'?'5.00s':'';
+    feedback(C.grade(e)+' · '+shown+(rt?' · '+rt:''),q.parts.map(p=>p.text).join(' · '),passed?'good':'bad');
+    setText('questionLabel',C.grade(e));
+    $('answer').classList.toggle('correct',passed);
+    if(result==='timeout')showClock(0,true);else if(e.completionMs!==null)showClock(e.completionMs,false);
+  }
+  updateUI();
+  try{await saveEvent(e);state.pendingEvent=null;storageStatus();}
+  catch(err){state.writeFailed=true;state.running=false;message('本题保存失败：'+err.message+'。请在档案中导出或重试。',true);storageStatus();updateUI();return;}
+  if(state.q!==q)return;
+  updateUI();
+  const totals=C.summary(sessionEvents());
+  if(settings().goal&&totals.n>=settings().goal&&C.isScored(e)){
+    state.running=false;state.sessionClosed=true;renderSessionEnd(totals);updateUI();return;
+  }
+  if(passed&&state.running&&state.view==='practice'&&!document.hidden&&settings().autoNext){
+    const generation=state.generation;
+    state.nextTimer=setTimeout(()=>{if(state.q===q&&generation===state.generation&&state.running&&state.view==='practice'&&!document.hidden)nextQuestion();},settings().autoNext);
+  }
+}
+function pause(){
+  const q=state.q;
+  cancelTimers();
+  if(q&&!q.done){state.running=false;finish('interrupted');}
+  else{cancelSpeech();state.running=false;updateUI();}
+}
+function metric(parent,label,value){const box=document.createElement('div');box.className='metric';const b=document.createElement('b');b.textContent=value;const span=document.createElement('span');span.textContent=label;box.append(b,span);parent.append(box);}
+function renderSessionEnd(s){$('sessionMetrics').replaceChildren();metric($('sessionMetrics'),'首答正确',pct(s.first,s.n));metric($('sessionMetrics'),'1 秒内',s.fast+'/'+s.n);metric($('sessionMetrics'),'超时',s.timeout);$('sessionEnd').hidden=false;}
+async function changeSettings(){
+  pause();
+  try{
+    const next={...settings()};
+    for(const k of ['max','rate','unitRatio','goal','autoNext'])next[k]=Number($(k).value);
+    for(const k of ['regime','strategy','group','keyboard','phonePattern'])next[k]=$(k).value;
+    next.inputPolicy='during';
+    const text=$('focus').value.trim();
+    if(text&&!/^[\d\s,，]+$/.test(text))throw new TypeError('专项请填写数词数值，以逗号分隔。');
+    next.focus=text?text.split(/[,，\s]+/).filter(Boolean).map(Number):[];
+    if(next.focus.some(v=>!C.ATOMS.some(a=>a.value===v)))throw new TypeError('专项只接受独立数词：个位、10–19、整十、整百或整千。');
+    next.voiceURI=$('voice').value;
+    validateSettings(next);
+    if(state.mode==='number'&&!['uniform','balanced'].includes(next.strategy)&&!C.scopeAtoms(next).length)throw new TypeError('范围、分组和专项没有交集。');
+    meta.settings=next;
+    try{await writeMeta();}catch(err){state.writeFailed=true;storageStatus();throw new Error('设置未保存：'+err.message);}
+    syncControls();message('');
+  }catch(err){syncControls();message(err.message,true);}
+}
+function switchTab(tab){
+  pause();
+  for(const b of document.querySelectorAll('[data-tab]'))b.setAttribute('aria-selected',String(b.dataset.tab===tab));
+  if(tab==='profile'){state.view='profile';$('profileMode').value=state.mode;$('practiceView').hidden=true;$('profileView').hidden=false;renderProfile();}
+  else{state.mode=tab;state.view='practice';$('practiceView').hidden=false;$('profileView').hidden=true;state.q=null;$('answer').value='';$('answer').classList.remove('correct');$('answer').setAttribute('aria-invalid','false');clearClock();feedback('点击开始');setText('questionLabel','准备');syncControls();}
+}
+function matchingEvents(mode){return events.filter(e=>C.condition(e)===C.settingsCondition(settings(),mode));}
+function renderProfile(){
+  const mode=$('profileMode').value,selected=matchingEvents(mode),s=C.summary(selected);
+  setText('profileCondition','');
+  $('profileMetrics').replaceChildren();metric($('profileMetrics'),'有效作答',s.n);metric($('profileMetrics'),'首答正确',pct(s.first,s.n));metric($('profileMetrics'),'1 秒内完成',pct(s.fast,s.n));metric($('profileMetrics'),'完成中位数',time(s.median));
+  setText('profileExtra','');
+  $('unitSection').hidden=mode!=='number';renderUnits();renderDaily(selected);renderConfusions(selected);renderHistory(selected);storageStatus();
+}
+function renderUnits(){
+  const cond=C.settingsCondition(settings(),'number'),filter=$('unitFilter').value;
+  const models=C.ATOMS.map(a=>({a,m:C.unitModel(events,a.key,cond)}));
+  const due=models.filter(x=>x.m.total&&x.m.due<=Date.now()).length;
+  setText('dueCount',due+' 项到期');
+  const list=models.filter(x=>filter==='all'||x.a.group===filter).sort((x,y)=>y.m.failure-x.m.failure||x.a.value-y.a.value);
+  $('units').replaceChildren();
+  for(const {a,m} of list){
+    const item=document.createElement('div');item.className='unit';const left=document.createElement('div');
+    const head=document.createElement('span');head.className='value';head.textContent=String(a.value)+' ';
+    const badge=document.createElement('span');badge.className='tag'+(m.stable?' good':m.n&&m.fast<m.n?' warn':'');badge.textContent=!m.n?'待测':m.stable?'稳定 <1s':'待巩固';head.append(badge);
+    const el=document.createElement('span');el.className='el';el.lang='el';el.textContent=a.label;
+    const info=document.createElement('div');info.className='small';info.textContent='1s 内 '+m.fast+'/'+m.n+' · 单测 '+m.total+' · '+time(m.median);
+    left.append(head,el,info);const train=document.createElement('button');train.textContent='练';train.addEventListener('click',()=>startFocus([a.value]));item.append(left,train);$('units').append(item);
+  }
+}
+async function startFocus(values){
+  pause();settings().focus=values;settings().group='all';settings().max=Math.max(settings().max,values.length&&Math.max(...values)>999?9999:values.length&&Math.max(...values)>99?999:99);settings().strategy='diagnostic';
+  try{await writeMeta();switchTab('number');syncControls();message('专项已设置。点击开始。');}catch(err){message('设置未保存：'+err.message,true);}
+}
+function renderDaily(selected){
+  $('dailyRows').replaceChildren();for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const day=dayString(d.getTime()),s=C.summary(selected.filter(e=>e.day===day));
+    const tr=document.createElement('tr');for(const text of [day.slice(5),s.n,pct(s.first,s.n),s.fast,s.timeout]){const td=document.createElement('td');td.textContent=text;td.className='num';tr.append(td);}$('dailyRows').append(tr);}
+}
+function renderConfusions(selected){
+  $('confusions').replaceChildren();const pairs=C.confusionPairs(selected).slice(0,12);
+  if(!pairs.length){$('confusions').textContent='暂无完整错答';return;}
+  for(const p of pairs){const row=document.createElement('div');row.className='confusion';const text=document.createElement('span');text.textContent=p.title+' · '+p.count+' 次';row.append(text);
+    const nums=p.title.split(' → ').map(Number);if(p.mode==='number'&&nums.every(v=>C.ATOMS.some(a=>a.value===v))){const b=document.createElement('button');b.textContent='对比练习';b.onclick=()=>startFocus([...new Set(nums)]);row.append(b);}$('confusions').append(row);}
+}
+function renderHistory(selected){
+  $('history').replaceChildren();for(const e of [...selected].sort((a,b)=>b.at-a.at).slice(0,20)){
+    const d=document.createElement('details');d.className='history-item';const h=document.createElement('summary');
+    const timestamp=new Date(e.at).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+    h.textContent=timestamp+'　'+e.target+'　'+C.grade(e)+(e.completionMs!==null?'　'+(e.completedDuringAudio?'随听完成':time(e.completionMs)):'');
+    const p=document.createElement('p');p.className='small';
+    p.textContent='输入 '+(e.entered||'—')+' · 起笔 '+(e.firstKeyMs!==null&&e.firstKeyMs<0?'音频内':time(e.firstKeyMs))+' · 输入耗时 '+time(e.typingMs)+' · 重听 '+e.replays+' · 修改 '+e.edits;
+    const el=document.createElement('div');el.className='small';el.lang='el';el.textContent=e.parts.map(p=>p.text).join(' · ');d.append(h,p,el);$('history').append(d);
+  }
+  if(!selected.length)$('history').textContent='暂无记录';
+}
+function exportPayload(){
+  const sorted=[...events].sort((a,b)=>a.at-b.at);
+  const sessions=[...new Set(sorted.map(e=>e.sessionId))];
+  const sessionMap=new Map(sessions.map((s,i)=>[s,i]));
+  return {v:7,x:new Date().toISOString(),s:packSettings(settings()),q:sessions,e:sorted.map(e=>packEvent(e,sessionMap.get(e.sessionId)))};
+}
+function exportBackup(){
+  const blob=new Blob([JSON.stringify(exportPayload())],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='greek-numbers-v7-'+dayString()+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+}
+async function importBackup(file){
+  pause();
+  try{
+    const raw=JSON.parse(await file.text());
+    let incoming=[],incomingSettings=null;
+    if(raw&&raw.v===7&&Array.isArray(raw.e)&&Array.isArray(raw.q)){
+      incomingSettings=unpackSettings(raw.s);
+      incoming=raw.e.map(a=>unpackEvent(a,raw.q));
+    }else if(raw&&raw.schemaVersion===4&&Array.isArray(raw.events)){
+      if(raw.settings)incomingSettings=validateSettings({...raw.settings,inputPolicy:'during'});
+      incoming=raw.events.map(normalizeImportedEvent);
+    }else throw new TypeError('不支持的备份格式');
+
+    const merged=new Map(events.map(e=>[e.id,e]));let added=0;
+    for(const e of incoming){
+      if(merged.has(e.id))continue;
+      merged.set(e.id,e);added++;
+    }
+    if(!confirm('导入 '+added+' 条新记录？'))return;
+
+    const nextMeta={schemaVersion:7,settings:incomingSettings||settings()};
+    const tx=db.transaction(['events7','meta'],'readwrite'),done=transactionDone(tx);
+    for(const e of incoming)tx.objectStore('events7').put(packDBEvent(e));
+    tx.objectStore('meta').put(nextMeta,'main');
+    await done;
+    events=[...merged.values()];meta=nextMeta;syncControls();renderProfile();storageStatus();message('已导入 '+added+' 条记录。');
+  }catch(err){message('导入失败：'+err.message,true);}finally{$('importFile').value='';}
+}
+async function resetData(){
+  pause();if(!confirm('清空本机全部记录？'))return;
+  try{
+    const nextMeta={schemaVersion:7,settings:{...DEFAULTS}};
+    const stores=['events7','meta'];if(db.objectStoreNames.contains('events'))stores.push('events');
+    const tx=db.transaction(stores,'readwrite'),done=transactionDone(tx);
+    tx.objectStore('events7').clear();
+    if(db.objectStoreNames.contains('events'))tx.objectStore('events').clear();
+    tx.objectStore('meta').put(nextMeta,'main');await done;
+    events=[];meta=nextMeta;state.ready=true;state.q=null;state.sessionId=uid();state.sessionClosed=false;state.pendingEvent=null;state.writeFailed=false;populateVoices();syncControls();renderProfile();storageStatus();message('已清空。');
+  }catch(err){message('清空失败：'+err.message,true);}
+}
+async function retrySave(){
+  try{if(state.pendingEvent)await saveEvent(state.pendingEvent);await writeMeta();state.pendingEvent=null;state.writeFailed=false;storageStatus();updateUI();message('保存成功。');}
+  catch(err){message('保存仍未成功：'+err.message,true);}
+}
+async function initialize(){
+  try{
+    db=await openDB();db.onversionchange=()=>{pause();db.close();state.ready=false;message('数据库已更新，请重新打开。',true);updateUI();};
+
+    const names=['meta','events7'];if(db.objectStoreNames.contains('events'))names.push('events');
+    const tx=db.transaction(names,'readonly'),done=transactionDone(tx);
+    const metaReq=request(tx.objectStore('meta').get('main'));
+    const compactReq=request(tx.objectStore('events7').getAll());
+    const oldReq=db.objectStoreNames.contains('events')?request(tx.objectStore('events').getAll()):Promise.resolve([]);
+    const [stored,packedRows,oldRows]=await Promise.all([metaReq,compactReq,oldReq]);await done;
+
+    if(stored&&stored.settings)meta={schemaVersion:7,settings:validateSettings({...stored.settings,inputPolicy:'during'})};
+    else meta={schemaVersion:7,settings:{...DEFAULTS}};
+
+    const merged=new Map();
+    for(const row of packedRows){const e=unpackDBEvent(row);merged.set(e.id,e);}
+    for(const raw of oldRows){
+      const e=normalizeImportedEvent(raw);
+      if(!merged.has(e.id))merged.set(e.id,e);
+    }
+    events=[...merged.values()];
+
+    // Rewrite once into the compact store, then clear the old expanded store.
+    if(oldRows.length||stored?.schemaVersion!==7){
+      const stores=['events7','meta'];if(db.objectStoreNames.contains('events'))stores.push('events');
+      const wtx=db.transaction(stores,'readwrite'),wdone=transactionDone(wtx);
+      for(const e of events)wtx.objectStore('events7').put(packDBEvent(e));
+      if(db.objectStoreNames.contains('events'))wtx.objectStore('events').clear();
+      wtx.objectStore('meta').put(meta,'main');
+      await wdone;
+    }else await writeMeta();
+
+    try{localStorage.removeItem('greekNumberTrainer.profile.v3');}catch{}
+    state.ready=true;syncControls();populateVoices();storageStatus();updateUI();
+    if(!voices.length)message('未检测到希腊语声音。');
+  }catch(err){state.ready=false;state.writeFailed=true;message('档案无法打开：'+err.message,true);storageStatus();updateUI();}
+}
+for(const b of document.querySelectorAll('[data-tab]'))b.onclick=()=>switchTab(b.dataset.tab);
+for(const id of ['max','regime','strategy','rate','group','unitRatio','keyboard','goal','autoNext','phonePattern','focus','voice'])$(id).addEventListener('change',changeSettings);
+$('refreshVoices').onclick=()=>{populateVoices();message(voices.length?'已找到 '+voices.length+' 个希腊语声音。':'仍未检测到希腊语声音。',!voices.length);};
+$('clearFocus').onclick=()=>{$('focus').value='';$('group').value='all';changeSettings();};
+$('play').onclick=()=>{if(state.running&&state.q)replay(false);else startSession();};
+$('pause').onclick=pause;
+$('next').onclick=()=>{if(activeQuestion())finish('skipped');else{if(state.sessionClosed){state.sessionId=uid();state.sessionClosed=false;}state.running=true;nextQuestion();}};
+$('reveal').onclick=()=>finish('revealed');$('slower').onclick=()=>replay(true);
+$('answer').addEventListener('input',e=>{if(!e.isComposing)acceptInput(e.target.value,String(e.inputType).startsWith('delete'),e.inputType==='insertFromPaste');});
+$('answer').addEventListener('compositionend',e=>acceptInput(e.target.value));
+$('answer').addEventListener('paste',()=>{if(state.q)state.q.pasted=true;});
+$('answer').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();e.target.blur();}});
+for(const b of $('pad').querySelectorAll('[data-key]'))b.onclick=()=>keypad(b.dataset.key);
+document.addEventListener('keydown',e=>{
+  if(e.ctrlKey||e.metaKey||e.altKey||e.isComposing||['INPUT','SELECT','TEXTAREA','BUTTON'].includes(document.activeElement.tagName))return;
+  if(settings().keyboard!=='pad'||!canInput())return;
+  if(/^\d$/.test(e.key)){e.preventDefault();keypad(e.key);}else if(e.key==='Backspace'){e.preventDefault();keypad('back');}
+});
+$('continueSession').onclick=()=>{state.sessionId=uid();state.sessionClosed=false;startSession();};
+$('profileMode').onchange=renderProfile;$('unitFilter').onchange=renderUnits;
+$('startDiagnostic').onclick=async()=>{settings().strategy='diagnostic';settings().focus=[];settings().group=$('unitFilter').value;settings().max=9999;try{await writeMeta();switchTab('number');syncControls();}catch(err){message(err.message,true);}};
+$('startDue').onclick=async()=>{settings().strategy='due';settings().focus=[];settings().group='all';settings().max=9999;try{await writeMeta();switchTab('number');syncControls();}catch(err){message(err.message,true);}};
+$('export').onclick=exportBackup;$('import').onclick=()=>{pause();$('importFile').click();};
+$('importFile').onchange=e=>{if(e.target.files[0])importBackup(e.target.files[0]);};$('reset').onclick=resetData;$('retrySave').onclick=retrySave;
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
+window.addEventListener('pagehide',pause);
+if('speechSynthesis' in window)speechSynthesis.addEventListener('voiceschanged',populateVoices);
+initialize();
+})();
+</script>
+</body></html>
